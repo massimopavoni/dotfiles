@@ -8,7 +8,7 @@
 #----------------
 # Prompt
 #----------------
-PS1='\[\e[0;38;5;129m\][\[\e[0m\]\t\[\e[0;38;5;129m\]] \[\e[0;38;5;39m\]\w\n\[\e[0m\]\! \[\e[0;38;5;34m\]\u\[\e[0;37m\]@\[\e[0;38;5;34m\]\h \[\e[0m\]\$ \[\e[0m\]'
+PS1='\[\e[0;38;5;129m\][\[\e[0m\]\t\[\e[0;38;5;129m\]] \[\e[0;38;5;39m\]\w\n\[\e[0;38;5;34m\]\u\[\e[0;37m\]@\[\e[0;38;5;34m\]\h \[\e[0m\]\$ \[\e[0m\]'
 
 #----------------
 # Aliases
@@ -47,4 +47,4 @@ eval "$(thefuck --alias)"
 # Variables
 #----------------
 export PATH=$PATH:/home/damax/.local/bin
-export EDITOR=/usr/bin/nano
+export EDITOR=/usr/bin/vim
