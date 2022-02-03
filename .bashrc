@@ -40,9 +40,6 @@ stringseed() {
 # sudo
 complete -cf sudo
 
-# thefuck
-eval "$(thefuck --alias)"
-
 #----------------
 # Variables
 #----------------
