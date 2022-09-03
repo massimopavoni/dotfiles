@@ -14,12 +14,6 @@ PS1='\[\e[0;38;5;129m\][\[\e[0;38;5;34m\]\t \[\e[0;38;5;34m\]$(date +"%Z%z")\[\e
 # Aliases
 #----------------
 
-# arch system update
-alias archsysupdate='$HOME/Documents/random_scripts/arch_system_update.sh'
-
-# get address
-alias getaddr='$HOME/Documents/random_scripts/get_addr.sh'
-
 # history
 alias hist='history'
 
