@@ -21,6 +21,12 @@ alias hist='history'
 alias ls='ls -a --color=auto'
 alias ll='ls -la --color=auto'
 
+# mv
+alias mv='mv -i'
+
+# cp
+alias cp='cp -i'
+
 # ncdu
 alias checkdisk='sudo ncdu'
 
