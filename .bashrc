@@ -51,5 +51,3 @@ complete -cf sudo
 #----------------
 export PATH=$PATH:/home/damax/.local/bin
 export EDITOR=/usr/bin/vim
-export SONAR_SCANNER_HOME=/opt/sonar-scanner
-export PATH=${SONAR_SCANNER_HOME}/bin:${PATH}
