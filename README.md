@@ -7,4 +7,4 @@ Linux things I don't wanna lose
 - **getaddr** - get LAN and public IP address (with `ip` and `curl`)
 - **irc** - launch detached `irssi` with `tmux`
 - **neofetch.conf** - `neofetch` information configuration
-- **restard_kde.sh** - restart KDE
+- **restardkde** - restart KDE
