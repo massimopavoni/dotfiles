@@ -30,6 +30,9 @@ alias cp='cp -i'
 # ncdu
 alias checkdisk='sudo ncdu'
 
+# scrcpy
+alias androidstream='scrcpy'
+
 #----------------
 # Functions
 #----------------
