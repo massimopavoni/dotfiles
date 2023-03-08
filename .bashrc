@@ -19,7 +19,7 @@ alias hist='history'
 
 # ls
 alias ls='ls -a --color=auto'
-alias ll='ls -la --color=auto'
+alias ll='ls -lha --color=auto'
 
 # mv
 alias mv='mv -i'
@@ -54,3 +54,4 @@ complete -cf sudo
 #----------------
 export PATH=$PATH:/home/damax/.local/bin
 export EDITOR=/usr/bin/vim
+
