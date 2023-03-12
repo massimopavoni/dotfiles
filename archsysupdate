@@ -4,14 +4,41 @@ sep="\n----------------------------------------------------------------\n"
 pack=2
 pacuk=0
 yayk=1
+yayuk=0
 
-printf "${sep}Calling topgrade${sep}\n"
+next() {
+	printf "\nPress any key to continue\n"
+	read -n 1 -s -r
+}
+
+calling() {
+	printf "${sep}Calling $1${sep}\n"
+}
+
+calling_paccache() {
+	cache=$([[ $2 == 0 ]] && echo "cache" || echo "uninstalled cache")
+	calling "paccache on $1 $cache (keeping $3 versions)"
+}
+
+calling "topgrade"
 topgrade
-printf "${sep}Calling paccache on pacman cache (keeping $pack versions)${sep}\n"
-paccache -rvk2
-printf "${sep}Calling paccache on pacman uninstalled cache (keeping $pacuk versions)${sep}\n"
-paccache -ruk0
-printf "${sep}Calling paccache on yay cache (keeping $yayk versions)${sep}\n"
-paccache -rvk1 -c $HOME/.cache/yay
-printf "${sep}Calling docker system prune${sep}\n"
+next
+
+calling_paccache "pacman" 0 $pack
+paccache -rvk$pack
+next
+
+calling_paccache "pacman" 1 $pacuk
+paccache -rvuk$pacuk
+next
+
+calling_paccache "yay" 0 $yayk
+paccache -rvk$yayk -c $HOME/.cache/yay
+next
+
+calling_paccache "yay" 1 $yayuk
+paccache -rvuk$yayuk -c $HOME/.cache/yay
+next
+
+calling "docker system prune"
 docker system prune
