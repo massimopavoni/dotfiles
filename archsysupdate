@@ -3,6 +3,7 @@
 sep="\n----------------------------------------------------------------\n"
 pack=2
 pacuk=0
+yaycache="$(find "$HOME"/.cache/yay -maxdepth 1 -type d | awk '{ print "-c " $1 }' | tail -n +2)"
 yayk=1
 yayuk=0
 
@@ -33,11 +34,11 @@ paccache -rvuk$pacuk
 next
 
 calling_paccache "yay" 0 $yayk
-paccache -rvk$yayk -c $HOME/.cache/yay
+paccache -rvk$yayk $yaycache
 next
 
 calling_paccache "yay" 1 $yayuk
-paccache -rvuk$yayuk -c $HOME/.cache/yay
+paccache -rvuk$yayuk $yaycache
 next
 
 calling "docker system prune"
