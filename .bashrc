@@ -27,19 +27,25 @@ alias mv='mv -i'
 # cp
 alias cp='cp -i'
 
+# grep
+alias grep='grep -i --color'
+
 # ncdu
 alias checkdisk='sudo ncdu'
 
 # scrcpy
 alias androidstream='scrcpy'
 
+# zbarcam
+alias qrscan=zbarcam-qt
+
 #----------------
 # Functions
 #----------------
 
 stringseed() {
-	RANDOM=$(printf "$1" | od -A n -t d1 | tr -d ' \n')
-	echo "$RANDOM"
+        RANDOM=$(printf "$1" | od -A n -t d1 | tr -d ' \n')
+        echo "$RANDOM"
 }
 
 #----------------
@@ -54,4 +60,4 @@ complete -cf sudo
 #----------------
 export EDITOR=/usr/bin/vim
 export SONAR_SCANNER_HOME=/opt/sonar-scanner
-export PATH=$PATH:$HOME/.local/bin:$HOME/.ghcup/bin:${SONAR_SCANNER_HOME}/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.ghcup/bin:$HOME/.cabal/bin:${SONAR_SCANNER_HOME}/bin:/usr/share/dotnet
