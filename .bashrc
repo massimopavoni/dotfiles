@@ -37,15 +37,18 @@ alias checkdisk='sudo ncdu'
 alias androidstream='scrcpy'
 
 # zbarcam
-alias qrscan=zbarcam-qt
+alias qrscan='zbarcam-qt'
+
+# qrencode
+alias qrcreate='qrencode -o qr.png'
 
 #----------------
 # Functions
 #----------------
 
 stringseed() {
-        RANDOM=$(printf "$1" | od -A n -t d1 | tr -d ' \n')
-        echo "$RANDOM"
+	RANDOM=$(printf "$1" | od -A n -t d1 | tr -d ' \n')
+	echo "$RANDOM"
 }
 
 #----------------
