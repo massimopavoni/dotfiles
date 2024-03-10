@@ -1,0 +1,23 @@
+#!/bin/bash
+
+sep="\n----------------------------------------------------------------\n"
+
+next() {
+	printf "\nPress any key to continue\n"
+	read -n 1 -s -r
+}
+
+calling() {
+	printf "${sep}Calling $1${sep}\n"
+}
+
+calling "topgrade"
+topgrade
+next
+
+calling "yay -Sc"
+yay -Sc
+next
+
+calling "docker system prune"
+docker system prune

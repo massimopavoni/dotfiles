@@ -1,0 +1,20 @@
+import = [ "~/.config/alacritty/themes/themes/hyper.toml" ]
+
+[window]
+dimensions = { columns = 110, lines = 30 }
+padding = { x = 4, y = 4 }
+opacity = 0.84
+
+[scrolling]
+history = 16384
+multiplier = 4
+
+[font]
+size = 12
+
+[colors]
+transparent_background_colors = true
+draw_bold_text_with_bright_colors = true
+
+[mouse]
+hide_when_typing = true
