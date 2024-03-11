@@ -1,7 +1,7 @@
 import = [ "~/.config/alacritty/themes/themes/hyper.toml" ]
 
 [env]
-WINIT_X11_SCALE_FACTOR="1.25"
+WINIT_X11_SCALE_FACTOR="1.0"
 
 [window]
 dimensions = { columns = 110, lines = 30 }
