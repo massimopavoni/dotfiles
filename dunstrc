@@ -61,7 +61,10 @@
     progress_bar_max_width = 300
 
     # Corner radius for the progress bar. 0 disables rounded corners.
-    progress_bar_corner_radius = 0
+    progress_bar_corner_radius = 4
+
+    # Highlight color, apparently it's only used for progress bar as of now
+    highlight = "#05b502"
 
     # Corner radius for the icon image.
     icon_corner_radius = 0

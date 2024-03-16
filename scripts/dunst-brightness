@@ -1,0 +1,11 @@
+#!/bin/bash
+ 
+# Arbitrary but unique message tag
+msgTag="dunst-brightness"
+
+brightnessctl set "$@" > /dev/null
+ 
+# Query brightnessctl for the current brightness
+brightness="$(brightnessctl info | grep brightness | awk '{print $4}' | tr -d '()')"
+# Show the brightness notification
+dunstify -t 1000 -a "changeBrightness" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$brightness" "Brightness: ${brightness}"
