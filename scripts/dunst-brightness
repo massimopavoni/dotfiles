@@ -9,4 +9,4 @@ brightnessctl set "$@" > /dev/null
 brightness="$(brightnessctl -m | cut -d , -f 4)"
 
 # Show the brightness notification
-dunstify -t 1000 -a "changeBrightness" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$brightness" "Brightness: ${brightness}"
+dunstify -t 1600 -a "changeBrightness" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$brightness" "Brightness: ${brightness}"
