@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/themes/themes/hyper.toml" ]
+import = [ "~/.config/alacritty/theme.toml" ]
 
 [env]
 WINIT_X11_SCALE_FACTOR="1.0"
@@ -6,10 +6,10 @@ WINIT_X11_SCALE_FACTOR="1.0"
 [window]
 dimensions = { columns = 110, lines = 30 }
 padding = { x = 4, y = 4 }
-opacity = 0.84
+opacity = 0.80
 
 [scrolling]
-history = 16384
+history = 8192
 multiplier = 4
 
 [font]

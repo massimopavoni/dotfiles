@@ -1,38 +1,32 @@
-[colors]
-selection = { text = "#ffffff", background = "#686868" }
+# Colors (Hyper)
 
+# Default colors
 [colors.primary]
-foreground = "#ffffff"
-background = "#000000"
-dim_foreground = "#ffffff"
-bright_foreground = "#ffffff"
+background = '#000000'
+foreground = '#ffffff'
 
+[colors.cursor]
+text = '#F81CE5'
+cursor = '#ffffff'
+
+# Normal colors
 [colors.normal]
-black = "#000000"
-red = "#b21818"
-green = "#18b218"
-yellow = "#b26818"
-blue = "#1818b2"
-magenta = "#b218b2"
-cyan = "#18b2b2"
-white = "#b2b2b2"
+black   = '#000000'
+red     = '#fe0100'
+green   = '#33ff00'
+yellow  = '#feff00'
+blue    = '#0066ff'
+magenta = '#cc00ff'
+cyan    = '#00ffff'
+white   = '#d0d0d0'
 
+# Bright colors
 [colors.bright]
-black = "#646464"
-red = "#ff5454"
-green = "#54ff54"
-yellow = "#ffff54"
-blue = "#5454ff"
-magenta = "#ff54ff"
-cyan = "#54ffff"
-white = "#ffffff"
-
-[colors.dim]
-black = "#181818"
-red = "#650000"
-green = "#006500"
-yellow = "#654a00"
-blue = "#000065"
-magenta = "#5f055f"
-cyan = "#18b2b2"
-white = "#656565"
+black   = '#808080'
+red     = '#fe0100'
+green   = '#33ff00'
+yellow  = '#feff00'
+blue    = '#0066ff'
+magenta = '#cc00ff'
+cyan    = '#00ffff'
+white   = '#FFFFFF'
