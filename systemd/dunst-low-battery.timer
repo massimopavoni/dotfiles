@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer to check battery charge
+
+[Timer]
+OnActiveSec=8min
+OnUnitActiveSec=8min
+
+[Install]
+WantedBy=timers.target

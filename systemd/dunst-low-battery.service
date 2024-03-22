@@ -1,0 +1,5 @@
+[Unit]
+Description=Check battery charge
+
+[Service]
+ExecStart=/bin/sh -c "~/.local/bin/dunst-low-battery"
