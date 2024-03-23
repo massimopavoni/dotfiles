@@ -6,7 +6,7 @@ WINIT_X11_SCALE_FACTOR="1.0"
 [window]
 dimensions = { columns = 110, lines = 30 }
 padding = { x = 4, y = 4 }
-opacity = 0.80
+opacity = 0.75
 
 [scrolling]
 history = 8192
