@@ -23,4 +23,4 @@ draw_bold_text_with_bright_colors = true
 hide_when_typing = true
 
 [keyboard]
-bindings = [ { key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" } ]
+bindings = [ { key = "Return", mods = "Shift|Alt", action = "SpawnNewInstance" } ]
