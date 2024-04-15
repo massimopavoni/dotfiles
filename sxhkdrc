@@ -4,9 +4,11 @@
 # audio
 XF86Audio{Mute,LowerVolume,RaiseVolume}
 	dunst-volume {toggle,-5%,+5%}
+
 # brightness
 XF86MonBrightness{Down,Up}
 	dunst-brightness {5%-,5%+}
+
 # media
 XF86Audio{Play,Prev,Next}
 	playerctl {play-pause,previous,next}
@@ -17,9 +19,11 @@ XF86Audio{Play,Prev,Next}
 # dmenu run
 super + p
 	dmenu_run
+
 # power menu
 super + o; q
 	dmenu_power
+
 # qalc
 super + o; c
 	dmenu -C -l 1
@@ -30,6 +34,7 @@ super + o; c
 # flameshot
 super + shift + s
 	flameshot gui
+
 # slock
 super + shift + l
 	slock
