@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ssid=$(nmcli device wifi list | sed -n '1!p' | cut -b 9- | dmenu -p Wifi | cut -d' ' -f3)
+
+nmcli device wifi connect "$ssid"

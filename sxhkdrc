@@ -20,13 +20,17 @@ XF86Audio{Play,Prev,Next}
 super + p
 	dmenu_run
 
-# power menu
-super + o; q
-	dmenu_power
-
 # qalc
 super + o; c
 	dmenu -C -l 1
+
+# power menu
+super + o; q
+        dmenu_power
+
+# wifi
+super + o; w
+	dmenu_wifi
 
 # --------------------------------
 # other
