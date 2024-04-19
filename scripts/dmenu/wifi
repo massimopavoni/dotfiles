@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-nmcli device wifi rescan
-
 ssid=$(nmcli device wifi list | sed -n '1!p' | cut -b 9- | dmenu | cut -d' ' -f3)
 
 nmcli device wifi connect "$ssid"
