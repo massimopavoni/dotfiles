@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 case "$(echo -e "Lock\nSleep\nPoweroff\nReboot\nLogout" | dmenu -l 5)"
 	in
 	Lock) exec slock;;

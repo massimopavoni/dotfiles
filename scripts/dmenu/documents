@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -euo pipefail
+
+files="$(fd -d4 -epdf . $HOME)"
+
+choice=$(printf '%s\n' "${files[@]}" \
+	| cut -d '/' -f4- \
+	| sed -e 's/.pdf//g' \
+	| sort -g \
+	| dmenu -l 16) || exit 1
+
+if [[ "$choice" ]]; then
+	zathura "$HOME/${choice}.pdf"
+else
+	echo "Program terminated" && exit 0
+fi

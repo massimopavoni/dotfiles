@@ -24,6 +24,10 @@ super + p
 super + o; c
 	dmenu -C -l 1
 
+# pdfs
+super + o; d
+	dmenu_documents
+
 # power menu
 super + o; q
         dmenu_power
