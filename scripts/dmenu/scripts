@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -euo pipefail
+
+chordStart="super + o"
+
+input=$(grep -C 1 "$chordStart" .dotfiles/sxhkdrc | sed 's/# //;s/'"$chordStart"'; //;s/\t//')
+
+declare -A dict
+
+while IFS= read -r line; do
+	if [[ $line == "--" || -z $line ]]; then
+		continue;
+	fi
+	read -r key
+	read -r value
+	dict["$key - $line"]=$value
+done <<< "$input"
+
+choice=$(printf '%s\n' "${!dict[@]}" | sort -g | dmenu) || exit 1
+
+${dict["$choice"]}

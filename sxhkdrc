@@ -20,19 +20,23 @@ XF86Audio{Play,Prev,Next}
 super + p
 	dmenu_run
 
-# qalc
+# interactive qalc
 super + o; c
 	dmenu -C -l 1
 
-# pdfs
-super + o; d
+# dmenu scripts
+super + o; o
+	dmenu_scripts
+
+# pdf viewer
+super + o; p
 	dmenu_documents
 
 # power menu
 super + o; q
-        dmenu_power
+	dmenu_power
 
-# wifi
+# change wifi
 super + o; w
 	dmenu_wifi
 
