@@ -22,7 +22,7 @@ super + p
 
 # interactive qalc
 super + o; c
-	dmenu -C -l 1
+	dmenu -C -l 1 -mw 960
 
 # dmenu scripts
 super + o; o
