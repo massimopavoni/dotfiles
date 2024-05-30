@@ -1,10 +1,10 @@
 #!/bin/bash
- 
+
 # Arbitrary but unique message tag
 msgTag="dunst-brightness"
 
-brightnessctl set "$@" > /dev/null
- 
+brightnessctl set "$@" >/dev/null
+
 # Query brightnessctl for the current brightness
 brightness="$(brightnessctl -m | cut -d , -f 4)"
 

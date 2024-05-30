@@ -2,11 +2,10 @@
 
 set -euo pipefail
 
-case "$(echo -e "Lock\nSleep\nPoweroff\nReboot\nLogout" | dmenu -l 5)"
-	in
-	Lock) exec slock;;
-	Sleep) exec systemctl suspend;;
-	Poweroff) exec systemctl poweroff;;
-	Reboot) exec systemctl reboot;;
-	Logout) exec pkill dwm;;
+case "$(echo -e "Lock\nSleep\nPoweroff\nReboot\nLogout" | dmenu -l 5)" in
+Lock) exec slock ;;
+Sleep) exec systemctl suspend ;;
+Poweroff) exec systemctl poweroff ;;
+Reboot) exec systemctl reboot ;;
+Logout) exec pkill dwm ;;
 esac
