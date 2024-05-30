@@ -19,8 +19,8 @@ volume="$(pactl get-sink-volume "$(pactl get-default-sink)" | grep % | awk '{pri
 mute="$(pactl get-sink-mute "$(pactl get-default-sink)" | awk '{print $2}')"
 if [[ "$volume" == "0%" || "$mute" == "yes" ]]; then
 	# Show the sound muted notification
-	dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag "Volume muted"
+	dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag "Volume muted" -i noicon
 else
 	# Show the volume notification
-	dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$volume" "Volume ${volume}"
+	dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$volume" "Volume ${volume}" -i noicon
 fi
