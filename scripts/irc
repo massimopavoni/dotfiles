@@ -1,4 +1,4 @@
 #!/bin/bash
 
-tmux new-session -n 'irc' -d 'proxychains4 -q irssi'
+tmux new-session -n 'irc' -d 'irssi'
 tmux -2 attach-session -d
