@@ -1,0 +1,15 @@
+[commit]
+	gpgsign = true
+
+[user]
+	name = Massimo Pavoni
+	useConfigOnly = true
+
+[include]
+	path = ~/.gitconfig.github
+
+[includeIf "gitdir:~/Documents/Repositories/GitHub/"]
+	path = ~/.gitconfig.github
+
+[includeIf "gitdir:~/Documents/Repositories/GitLab/"]
+	path = ~/.gitconfig.gitlab

@@ -1,0 +1,6 @@
+[user]
+	email = maspavoni@gmail.com
+	signingKey = CA2B8AAFE839402C396E9D663199259B03D65573
+
+[url "git@github.com:"]
+	insteadOf = https://github.com
