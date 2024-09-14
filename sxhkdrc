@@ -24,13 +24,17 @@ super + p
 super + o; c
 	dmenu -C -l 1 -mw 960
 
+# kill process
+super + o; k
+  dmenu_kill
+
 # dmenu scripts
 super + o; o
 	dmenu_scripts
 
 # pdf viewer
 super + o; p
-	dmenu_documents
+	dmenu_pdf
 
 # power menu
 super + o; q

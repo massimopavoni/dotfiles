@@ -9,12 +9,12 @@ input=$(grep -C 1 "$chordStart" .dotfiles/sxhkdrc | sed 's/# //;s/'"$chordStart"
 declare -A dict
 
 while IFS= read -r line; do
-	if [[ $line == "--" || -z $line ]]; then
-		continue
-	fi
-	read -r key
-	read -r value
-	dict["$key - $line"]=$value
+  if [[ $line == "--" || -z $line ]]; then
+    continue
+  fi
+  read -r key
+  read -r value
+  dict["$key - $line"]=$value
 done <<<"$input"
 
 choice=$(printf '%s\n' "${!dict[@]}" | sort -g | dmenu) || exit 1
