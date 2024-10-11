@@ -1,6 +1,6 @@
 [user]
 	email = real.damax@gmail.com
-	signingKey = 45762FCE09293157C4B05F38582D5E92B656314A
+	signingKey = 9CAE0A3959AE14C0
 
 [url "ssh://aur@aur.archlinux.org:"]
 	insteadOf = https://aur.archlinux.org

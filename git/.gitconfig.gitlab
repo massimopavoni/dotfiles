@@ -1,6 +1,6 @@
 [user]
 	email = maspavoni@gmail.com
-	signingKey = 2D1E052DBD079660453605816DFC2F8E3846619F
+	signingKey = 30BAFF173CAD2C6F
 
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com
