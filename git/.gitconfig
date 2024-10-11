@@ -4,9 +4,13 @@
 [user]
 	name = Massimo Pavoni
 	useConfigOnly = true
+	email = maspavoni@gmail.com
 
 [include]
 	path = ~/.gitconfig.github
+
+[includeIf "gitdir:~/Documents/Repositories/AUR/"]
+	path = ~/.gitconfig.aur
 
 [includeIf "gitdir:~/Documents/Repositories/GitHub/"]
 	path = ~/.gitconfig.github
