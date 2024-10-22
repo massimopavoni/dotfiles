@@ -1,28 +1,87 @@
 # --------------------------------
+# function keys
+
+# firefox
+F13
+  firefox
+
+# thunar
+F14
+  thunar
+
+# vscode
+F15
+  code
+
+# corsair mouse
+F16
+  ckb-next
+
+# telegram
+F17
+  telegram-desktop
+
+# discord
+F18
+  discord
+
+# signal
+F19
+  signal-desktop
+
+# irssi tor
+F20
+  alacritty -e irctor
+
+# thunderbird
+F21
+  thunderbird
+
+# spotify
+F22
+  spotify-launcher
+
+# bitwarden
+F23
+  bitwarden-desktop
+
+# btop
+F24
+  alacritty -e btop
+
+# --------------------------------
 # additional keys
+
+# media
+XF86Audio{Prev,Play,Next}
+	playerctl {previous,play-pause,next}
 
 # audio
 XF86Audio{Mute,LowerVolume,RaiseVolume}
 	dunst-volume {toggle,-5%,+5%}
 
+# calculator
+XF86Calculator
+	dmenu -C -l 1 -mw 960
+
 # brightness
 XF86MonBrightness{Down,Up}
 	dunst-brightness {5%-,5%+}
-
-# media
-XF86Audio{Play,Prev,Next}
-	playerctl {play-pause,previous,next}
 
 # --------------------------------
 # dmenu
 
 # dmenu run
 super + p
-	dmenu_run
+  dmenu_run
 
 # interactive qalc
 super + o; c
-	dmenu -C -l 1 -mw 960
+  dmenu -C -l 1 -mw 960
+
+# function keys
+super + o; f
+  dmenu_functions
 
 # kill process
 super + o; k
@@ -30,19 +89,19 @@ super + o; k
 
 # dmenu scripts
 super + o; o
-	dmenu_scripts
+  dmenu_scripts
 
 # pdf viewer
 super + o; p
-	dmenu_pdf
+  dmenu_pdf
 
 # power menu
 super + o; q
-	dmenu_power
+  dmenu_power
 
 # change wifi
 super + o; w
-	dmenu_wifi
+  dmenu_wifi
 
 # --------------------------------
 # other

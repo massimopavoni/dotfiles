@@ -4,7 +4,7 @@ set -euo pipefail
 
 chordStart="super + o"
 
-input=$(rg -C 1 -F "$chordStart" $HOME/.dotfiles/sxhkdrc | sed 's/# //;s/'"$chordStart"'; //;s/\t//')
+input=$(rg -C 1 "F(1|2)" $HOME/.dotfiles/sxhkdrc | sed 's/# //;;s/\t//')
 
 declare -A dict
 
@@ -17,6 +17,6 @@ while IFS= read -r line; do
   dict["$key - $line"]=$value
 done <<<"$input"
 
-choice=$(printf '%s\n' "${!dict[@]}" | sort -g | dmenu -mw 256) || exit 1
+choice=$(printf '%s\n' "${!dict[@]}" | sort -g | dmenu -l 12 -mw 256) || exit 1
 
 ${dict["$choice"]}
