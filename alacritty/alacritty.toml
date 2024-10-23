@@ -1,4 +1,3 @@
-import = [ "~/.config/alacritty/theme.toml" ]
 
 [env]
 WINIT_X11_SCALE_FACTOR="1.0"
@@ -24,3 +23,6 @@ hide_when_typing = true
 
 [keyboard]
 bindings = [ { key = "Return", mods = "Shift|Alt", action = "SpawnNewInstance" } ]
+
+[general]
+import = [ "~/.config/alacritty/theme.toml" ]
