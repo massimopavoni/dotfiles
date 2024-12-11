@@ -18,8 +18,8 @@ PS1='\[\e[0;38;5;129m\][\[\e[0;38;5;34m\]\t \[\e[0;38;5;34m\]$(date +"%Z%z")\[\e
 alias hist='history'
 
 # ls
-alias ls='ls -a --color=auto'
-alias ll='ls -lha --color=auto'
+alias ls='exa -a'
+alias ll='exa -lgah'
 
 # mv
 alias mv='mv -i'
@@ -28,7 +28,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 
 # grep
-alias grep='grep -i --color'
+alias grep='rg'
 
 # ncdu
 alias checkdisk='sudo ncdu'
@@ -41,15 +41,6 @@ alias qrscan='zbarcam-qt'
 
 # qrencode
 alias qrcreate='qrencode -o qr.png'
-
-#----------------
-# Functions
-#----------------
-
-stringseed() {
-	RANDOM=$(printf "$1" | od -A n -t d1 | tr -d ' \n')
-	echo "$RANDOM"
-}
 
 #----------------
 # Completion
