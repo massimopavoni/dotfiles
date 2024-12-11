@@ -17,7 +17,7 @@ PS1='\[\e[0;38;5;129m\][\[\e[0;38;5;34m\]\t \[\e[0;38;5;34m\]$(date +"%Z%z")\[\e
 # history
 alias hist='history'
 
-# ls
+# exa
 alias ls='exa -a'
 alias ll='exa -lgah'
 
@@ -27,8 +27,11 @@ alias mv='mv -i'
 # cp
 alias cp='cp -i'
 
-# grep
-alias grep='rg'
+# ripgrep
+alias grep='rg -i'
+
+# fd
+alias find='fd'
 
 # ncdu
 alias checkdisk='sudo ncdu'
@@ -48,3 +51,8 @@ alias qrcreate='qrencode -o qr.png'
 
 # sudo
 complete -cf sudo
+
+#----------------
+# ble.sh
+#----------------
+source ~/.local/share/blesh/ble.sh
