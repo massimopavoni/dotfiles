@@ -20,9 +20,6 @@ anyabbr cberg ~/Documents/Repositories/Codeberg/
 anyabbr ghub ~/Documents/Repositories/GitHub
 anyabbr glab ~/Documents/Repositories/GitLab
 
-# history
-anyabbr !! --function last_history_item
-
 #----------------
 
 functions -e anyabbr
