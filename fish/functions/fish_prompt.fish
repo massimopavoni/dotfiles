@@ -1,31 +1,91 @@
-function fish_prompt --description 'Write out the prompt'
-    set -l last_pipestatus $pipestatus
-    set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
-    set -l normal (set_color normal)
-    set -q fish_color_status
-    or set -g fish_color_status red
-
-    # Color the prompt differently when we're root
-    set -l color_cwd $fish_color_cwd
-    set -l suffix '>'
-    if functions -q fish_is_root_user; and fish_is_root_user
-        if set -q fish_color_cwd_root
-            set color_cwd $fish_color_cwd_root
+function fish_prompt
+    switch "$fish_key_bindings"
+        case fish_hybrid_key_bindings fish_vi_key_bindings
+            set STARSHIP_KEYMAP "$fish_bind_mode"
+        case '*'
+            set STARSHIP_KEYMAP insert
+    end
+    set STARSHIP_CMD_PIPESTATUS $pipestatus
+    set STARSHIP_CMD_STATUS $status
+    # Account for changes in variable name between v2.7 and v3.0
+    set STARSHIP_DURATION "$CMD_DURATION$cmd_duration"
+    set STARSHIP_JOBS (count (jobs -p))
+    if test "$TRANSIENT" = "1"
+        set -g TRANSIENT 0
+        # Clear from cursor to end of screen as `commandline -f repaint` does not do this
+        # See https://github.com/fish-shell/fish-shell/issues/8418
+        printf \e\[0J
+        if type -q starship_transient_prompt_func
+            starship_transient_prompt_func --terminal-width="$COLUMNS" --status=$STARSHIP_CMD_STATUS --pipestatus="$STARSHIP_CMD_PIPESTATUS" --keymap=$STARSHIP_KEYMAP --cmd-duration=$STARSHIP_DURATION --jobs=$STARSHIP_JOBS
+        else
+            printf "\e[1;32m❯\e[0m "
         end
-        set suffix '#'
+    else
+        /usr/bin/starship prompt --terminal-width="$COLUMNS" --status=$STARSHIP_CMD_STATUS --pipestatus="$STARSHIP_CMD_PIPESTATUS" --keymap=$STARSHIP_KEYMAP --cmd-duration=$STARSHIP_DURATION --jobs=$STARSHIP_JOBS
     end
-
-    # Write pipestatus
-    # If the status was carried over (if no command is issued or if `set` leaves the status untouched), don't bold it.
-    set -l bold_flag --bold
-    set -q __fish_prompt_status_generation; or set -g __fish_prompt_status_generation $status_generation
-    if test $__fish_prompt_status_generation = $status_generation
-        set bold_flag
-    end
-    set __fish_prompt_status_generation $status_generation
-    set -l status_color (set_color $fish_color_status)
-    set -l statusb_color (set_color $bold_flag $fish_color_status)
-    set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
-
-    echo -n -s (prompt_login)' ' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal " "$prompt_status $suffix " "
 end
+
+function fish_right_prompt
+    switch "$fish_key_bindings"
+        case fish_hybrid_key_bindings fish_vi_key_bindings
+            set STARSHIP_KEYMAP "$fish_bind_mode"
+        case '*'
+            set STARSHIP_KEYMAP insert
+    end
+    set STARSHIP_CMD_PIPESTATUS $pipestatus
+    set STARSHIP_CMD_STATUS $status
+    # Account for changes in variable name between v2.7 and v3.0
+    set STARSHIP_DURATION "$CMD_DURATION$cmd_duration"
+    set STARSHIP_JOBS (count (jobs -p))
+    if test "$RIGHT_TRANSIENT" = "1"
+        set -g RIGHT_TRANSIENT 0
+        if type -q starship_transient_rprompt_func
+            starship_transient_rprompt_func --terminal-width="$COLUMNS" --status=$STARSHIP_CMD_STATUS --pipestatus="$STARSHIP_CMD_PIPESTATUS" --keymap=$STARSHIP_KEYMAP --cmd-duration=$STARSHIP_DURATION --jobs=$STARSHIP_JOBS
+        else
+            printf ""
+        end
+    else
+        /usr/bin/starship prompt --right --terminal-width="$COLUMNS" --status=$STARSHIP_CMD_STATUS --pipestatus="$STARSHIP_CMD_PIPESTATUS" --keymap=$STARSHIP_KEYMAP --cmd-duration=$STARSHIP_DURATION --jobs=$STARSHIP_JOBS
+    end
+end
+
+# Disable virtualenv prompt, it breaks starship
+set -g VIRTUAL_ENV_DISABLE_PROMPT 1
+
+# Remove default mode prompt
+builtin functions -e fish_mode_prompt
+
+set -gx STARSHIP_SHELL "fish"
+
+# Transience related functions
+function reset-transient --on-event fish_postexec
+    set -g TRANSIENT 0
+    set -g RIGHT_TRANSIENT 0
+end
+
+function transient_execute
+    if commandline --is-valid || test -z "$(commandline)" && not commandline --paging-mode
+        set -g TRANSIENT 1
+        set -g RIGHT_TRANSIENT 1
+        commandline -f repaint
+    end
+    commandline -f execute
+end
+
+# --user is the default, but listed anyway to make it explicit.
+function enable_transience --description 'enable transient prompt keybindings'
+    bind --user \r transient_execute
+    bind --user -M insert \r transient_execute
+end
+
+# Erase the transient prompt related key bindings.
+# --user is the default, but listed anyway to make it explicit.
+# Erasing a user binding will revert to the preset.
+function disable_transience --description 'remove transient prompt keybindings'
+    bind --user -e \r
+    bind --user -M insert -e \r
+end
+
+# Set up the session key that will be used to store logs
+# We don't use `random [min] [max]` because it is unavailable in older versions of fish shell
+set -gx STARSHIP_SESSION_KEY (string sub -s1 -l16 (random)(random)(random)(random)(random)0000000000000000)

@@ -3,6 +3,7 @@
 #----------------
 
 # utils
+alias cl clear
 alias h history
 
 alias mv 'mv -i'
