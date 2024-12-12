@@ -6,6 +6,8 @@ function anyabbr
     abbr -a $argv[1] --position anywhere $argv[2..-1]
 end
 
+#----------------
+
 # directories
 anyabbr home ~
 anyabbr repo ~/Documents/Repositories
@@ -20,5 +22,7 @@ anyabbr glab ~/Documents/Repositories/GitLab
 
 # history
 anyabbr !! --function last_history_item
+
+#----------------
 
 functions -e anyabbr
