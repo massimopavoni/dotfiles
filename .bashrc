@@ -51,8 +51,3 @@ alias qrcreate='qrencode -o qr.png'
 
 # sudo
 complete -cf sudo
-
-#----------------
-# ble.sh
-#----------------
-source ~/.local/share/blesh/ble.sh
