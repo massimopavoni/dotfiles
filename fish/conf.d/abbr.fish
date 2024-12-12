@@ -2,13 +2,23 @@
 # Abbreviations
 #----------------
 
-# repositories
-abbr repo ~/Documents/Repositories
+function anyabbr
+    abbr -a $argv[1] --position anywhere $argv[2..-1]
+end
 
-abbr dotf ~/.dotfiles
-abbr suck ~/.suckless
+# directories
+anyabbr home ~
+anyabbr repo ~/Documents/Repositories
 
-abbr aur ~/Documents/Repositories/AUR
-abbr cberg ~/Documents/Repositories/Codeberg/
-abbr ghub ~/Documents/Repositories/GitHub
-abbr glab ~/Documents/Repositories/GitLab
+anyabbr dotf ~/.dotfiles
+anyabbr suck ~/.suckless
+
+anyabbr aur ~/Documents/Repositories/AUR
+anyabbr cberg ~/Documents/Repositories/Codeberg/
+anyabbr ghub ~/Documents/Repositories/GitHub
+anyabbr glab ~/Documents/Repositories/GitLab
+
+# history
+anyabbr !! --function last_history_item
+
+functions -e anyabbr
