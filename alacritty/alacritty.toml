@@ -1,6 +1,6 @@
 
 [env]
-WINIT_X11_SCALE_FACTOR="1.0"
+WINIT_X11_SCALE_FACTOR = "1.0"
 
 [window]
 dimensions = { columns = 110, lines = 30 }
@@ -22,7 +22,11 @@ draw_bold_text_with_bright_colors = true
 hide_when_typing = true
 
 [keyboard]
-bindings = [ { key = "Return", mods = "Shift|Alt", action = "SpawnNewInstance" } ]
+bindings = [
+  { key = "Return", mods = "Shift|Alt", action = "SpawnNewInstance" },
+  { key = "Return", mods = "Shift", chars = "\u2b91" },
+  { key = "Return", mods = "Control", chars = "\u2b90" },
+]
 
 [general]
-import = [ "~/.config/alacritty/theme.toml" ]
+import = ["~/.config/alacritty/theme.toml"]
