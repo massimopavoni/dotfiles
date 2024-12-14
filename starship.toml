@@ -1,0 +1,59 @@
+add_newline = false
+format = '$time $all$username$hostname $character'
+right_format = '$sudo'
+
+[character]
+success_symbol = '[λ](bold purple)'
+error_symbol = '[λ](bold red)'
+
+[cmd_duration]
+min_time = 8000
+style = 'bold green'
+
+[directory]
+truncation_length = 64
+truncate_to_repo = false
+style = 'bold blue'
+repo_root_style = 'bold purple'
+
+[git_commit]
+commit_hash_length = 8
+tag_disabled = false
+
+[java]
+symbol = ' '
+style = 'bold red'
+
+[lua]
+symbol = ' '
+
+[package]
+symbol = ' '
+
+[python]
+symbol = ' '
+style = 'blue'
+
+[rust]
+symbol = ' '
+style = 'red'
+
+[sudo]
+format = '[$symbol]($style)'
+symbol = ' '
+disabled = false
+
+[time]
+format = '[\[[$time]($style)\]](bold purple)'
+style = 'bold green'
+disabled = false
+
+[username]
+style_user = 'bold green'
+format = '[\[[$user]($style)](bold purple)'
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '[@[$hostname]($style)\]](bold purple)'
+style = 'bold green'
