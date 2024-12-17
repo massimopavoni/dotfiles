@@ -1,7 +1,7 @@
 # Prompt
 add_newline = false
 format = '$time $all$username$hostname $character'
-right_format = '$sudo $cmd_duration'
+right_format = '$sudo$cmd_duration'
 
 [character]
 success_symbol = '[λ](bold purple)'
@@ -9,7 +9,7 @@ error_symbol = '[λ](bold red)'
 
 [cmd_duration]
 min_time = 4000
-format = '[⏱ $duration]($style)'
+format = ' [⏱ $duration]($style)'
 style = 'bold green'
 
 [directory]
