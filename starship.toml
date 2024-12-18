@@ -83,8 +83,9 @@ symbol = ' '
 symbol = ' '
 
 [python]
+format = 'via [[${symbol}](blue)${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)'
 symbol = ' '
-style = 'blue'
+style = 'bold blue'
 
 [rlang]
 symbol = '󰟔 '
@@ -93,8 +94,8 @@ symbol = '󰟔 '
 symbol = ' '
 
 [rust]
+format = 'via [[$symbol](red)($version )]($style)'
 symbol = ' '
-style = 'red'
 
 [scala]
 symbol = ' '
