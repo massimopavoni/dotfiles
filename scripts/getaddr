@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo "LAN: $(ip -br a | awk '/wlan0/ { gsub(/  +/, " "); print $3 }')"
+echo "LAN: $(ip -br a | awk '/wlan0/ {print $3}')"
 echo "Public: $(curl -s ifconfig.me)"
