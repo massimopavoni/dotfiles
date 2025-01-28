@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-files="$(fd -d6 -epdf . $HOME)"
+files="$(fd -d6 -epdf . "$HOME")"
 
 choice=$(printf '%s\n' "${files[@]}" |
   cut -d '/' -f4- |

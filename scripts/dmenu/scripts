@@ -4,7 +4,7 @@ set -euo pipefail
 
 chordStart="super + o"
 
-input=$(rg -C 1 -F "$chordStart" $HOME/.dotfiles/sxhkdrc | sed 's/# //;s/'"$chordStart"'; //;s/\t//')
+input=$(rg -C 1 -F "$chordStart" "$HOME"/.dotfiles/sxhkdrc | sed 's/# //;s/'"$chordStart"'; //;s/\t//')
 
 declare -A dict
 

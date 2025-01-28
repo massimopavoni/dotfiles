@@ -3,24 +3,24 @@
 # Arbitrary but unique message tag
 msgTag="dunst-volume"
 
-if [[ "$@" == "toggle" ]]; then
-	pactl set-sink-mute $(pactl get-default-sink) "$@" >/dev/null
+if (("$@" == "toggle")); then
+  pactl set-sink-mute "$(pactl get-default-sink)" "$@" >/dev/null
 else
-	mute="$(pactl get-sink-mute "$(pactl get-default-sink)" | awk '{print $2}')"
-	if [[ "$mute" == "yes" ]]; then
-		# Unmute first
-		pactl set-sink-mute $(pactl get-default-sink) "no" >/dev/null
-	fi
-	pactl set-sink-volume $(pactl get-default-sink) "$@" >/dev/null
+  mute="$(pactl get-sink-mute "$(pactl get-default-sink)" | awk '{print $2}')"
+  if [[ "$mute" == "yes" ]]; then
+    # Unmute first
+    pactl set-sink-mute "$(pactl get-default-sink)" "no" >/dev/null
+  fi
+  pactl set-sink-volume "$(pactl get-default-sink)" "$@" >/dev/null
 fi
 
 # Query pactl for the current volume and whether or not the speaker is muted
 volume="$(pactl get-sink-volume "$(pactl get-default-sink)" | grep % | awk '{print $5}')"
 mute="$(pactl get-sink-mute "$(pactl get-default-sink)" | awk '{print $2}')"
 if [[ "$volume" == "0%" || "$mute" == "yes" ]]; then
-	# Show the sound muted notification
-	dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag "Volume muted" -i noicon
+  # Show the sound muted notification
+  dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag "Volume muted" -i noicon
 else
-	# Show the volume notification
-	dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$volume" "Volume ${volume}" -i noicon
+  # Show the volume notification
+  dunstify -t 1600 -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$volume" "Volume ${volume}" -i noicon
 fi

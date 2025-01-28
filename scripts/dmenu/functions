@@ -2,9 +2,7 @@
 
 set -euo pipefail
 
-chordStart="super + o"
-
-input=$(rg -C 1 "F(1|2)" $HOME/.dotfiles/sxhkdrc | sed 's/# //;;s/\t//')
+input=$(rg -C 1 "F(1|2)" "$HOME"/.dotfiles/sxhkdrc | sed 's/# //;;s/\t//')
 
 declare -A dict
 

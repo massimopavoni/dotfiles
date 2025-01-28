@@ -1,14 +1,14 @@
 #!/bin/bash
 
-sep="\n----------------------------------------------------------------\n"
+sep="----------------------------------------------------------------"
 
 next() {
-	printf "\nPress any key to continue\n"
-	read -n 1 -s -r
+  printf "\nPress any key to continue\n"
+  read -n 1 -s -r
 }
 
 calling() {
-	printf "${sep}Calling $1${sep}\n"
+  printf "\n%s\nCalling %s\n%s\n\n" $sep "$1" $sep
 }
 
 calling "topgrade"
