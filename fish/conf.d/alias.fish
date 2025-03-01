@@ -15,6 +15,8 @@ alias ll 'exa -lagh'
 alias grep 'rg -i'
 alias find fd
 
+alias ip 'ip -c'
+
 # miscellaneous
 alias androidstream scrcpy
 alias checkdisk 'sudo ncdu'
