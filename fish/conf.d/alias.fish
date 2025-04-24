@@ -21,5 +21,6 @@ alias ip 'ip -c'
 alias androidstream scrcpy
 alias checkdisk 'sudo ncdu'
 alias hyperfine 'hyperfine -N'
+alias rustrepl 'evcxr'
 alias qrcreate 'qrencode -o qr.png'
 alias qrscan zbarcam-qt
