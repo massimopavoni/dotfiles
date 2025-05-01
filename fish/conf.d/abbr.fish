@@ -16,9 +16,11 @@ anyabbr dotf ~/.dotfiles
 anyabbr suck ~/.suckless
 
 anyabbr aur ~/Documents/Repositories/AUR
-anyabbr cberg ~/Documents/Repositories/Codeberg/
+anyabbr cberg ~/Documents/Repositories/Codeberg
 anyabbr ghub ~/Documents/Repositories/GitHub
 anyabbr glab ~/Documents/Repositories/GitLab
+
+anyabbr rpi5k3s ~/Documents/Repositories/GitHub/rpi5-k3s
 
 #----------------
 
