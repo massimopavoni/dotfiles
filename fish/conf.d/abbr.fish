@@ -10,7 +10,7 @@ end
 
 # directories
 anyabbr home ~
-anyabbr repo ~/Documents/Repositories
+anyabbr repos ~/Documents/Repositories
 
 anyabbr dotf ~/.dotfiles
 anyabbr suck ~/.suckless
