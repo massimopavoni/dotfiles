@@ -47,7 +47,7 @@ style_user = 'bold green'
 format = '[\[[$user]($style)](bold purple)'
 show_always = true
 
-# Languages
+# Languages and technologies
 [c]
 symbol = ' '
 
@@ -68,6 +68,9 @@ symbol = ' '
 
 [haskell]
 symbol = ' '
+
+[helm]
+detect_folders = ['helmfile.d']
 
 [java]
 symbol = ' '
