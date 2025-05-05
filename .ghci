@@ -1,0 +1,7 @@
+:set prompt "\ESC[32;1m\STX%s\nλ > \ESC[m\STX"
+:set -Wall
+:set -Wno-type-defaults
+:set +s
+:def clear \_ -> pure ":!clear"
+:def hoogle \x -> pure $ ":!hoogle \"" ++ x ++ "\""
+:def hdoc \x -> pure $ ":!hoogle --info \"" ++ x ++ "\""
