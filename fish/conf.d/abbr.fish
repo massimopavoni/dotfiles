@@ -22,6 +22,9 @@ anyabbr glab ~/Documents/Repositories/GitLab
 
 anyabbr rpi5k3s ~/Documents/Repositories/GitHub/rpi5-k3s
 
+# k8s
+anyabbr k kubectl
+
 #----------------
 
 functions -e anyabbr
