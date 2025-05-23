@@ -20,6 +20,7 @@ alias ip 'ip -c'
 # miscellaneous
 alias androidstream scrcpy
 alias checkdisk 'sudo ncdu'
+alias dua 'sudo dua interactive'
 alias hyperfine 'hyperfine -N'
 alias rustrepl 'evcxr'
 alias qrcreate 'qrencode -o qr.png'
