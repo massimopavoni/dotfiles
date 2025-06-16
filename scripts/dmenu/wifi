@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-ssid=$(nmcli device wifi list | sed -n '1!p' | cut -b 9- | dmenu | cut -d' ' -f3)
+ssid=$(nmcli device wifi list | head -n -2 | awk 'NR > 1 {print substr($0,9)}' | dmenu | awk '{print $3}')
 
 nmcli device wifi connect "$ssid"
