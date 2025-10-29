@@ -25,13 +25,13 @@ F17
 F18
   vesktop
 
-# signal
+# element
 F19
-  signal-desktop
+  element-desktop
 
-# irssi tor
+# signal
 F20
-  alacritty -e irctor
+  signal-desktop
 
 # thunderbird
 F21
