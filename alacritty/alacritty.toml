@@ -1,25 +1,16 @@
-[env]
-WINIT_X11_SCALE_FACTOR = "1.0"
-
-[window]
-dimensions = { columns = 110, lines = 30 }
-padding = { x = 4, y = 4 }
-opacity = 0.75
-
-[scrolling]
-history = 8192
-multiplier = 4
-
-[font]
-size = 12
-normal = { family = "MonaspiceNe Nerd Font" }
-
 [colors]
 transparent_background_colors = true
 draw_bold_text_with_bright_colors = true
 
-[mouse]
-hide_when_typing = true
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
+
+[font]
+size = 12
+normal = { family = "JetBrainsMono Nerd Font" }
+
+[general]
+import = ["~/.config/alacritty/theme.toml"]
 
 [keyboard]
 bindings = [
@@ -28,5 +19,14 @@ bindings = [
   { key = "Return", mods = "Control", chars = "\u2b90" },
 ]
 
-[general]
-import = ["~/.config/alacritty/theme.toml"]
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 8192
+multiplier = 4
+
+[window]
+dimensions = { columns = 110, lines = 30 }
+dynamic_padding = true
+opacity = 0.75
