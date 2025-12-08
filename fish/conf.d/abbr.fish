@@ -19,6 +19,7 @@ anyabbr aur ~/Documents/Repositories/AUR
 anyabbr cberg ~/Documents/Repositories/Codeberg
 anyabbr ghub ~/Documents/Repositories/GitHub
 anyabbr glab ~/Documents/Repositories/GitLab
+anyabbr aoc ~/Documents/Repositories/GitHub/AoC
 
 anyabbr rpi5k3s ~/Documents/Repositories/GitHub/rpi5-k3s
 
