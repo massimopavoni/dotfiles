@@ -29,4 +29,4 @@ multiplier = 4
 [window]
 dimensions = { columns = 110, lines = 30 }
 dynamic_padding = true
-opacity = 0.8
+opacity = 0.75
